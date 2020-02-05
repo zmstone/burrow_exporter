@@ -21,58 +21,58 @@ func main() {
 	app.Version = Version
 	app.Name = "burrow-exporter"
 	app.Flags = []cli.Flag{
-		cli.StringFlag{
+		&cli.StringFlag{
 			Name:   "burrow-addr",
 			Usage:  "Address that burrow is listening on",
 			EnvVars: []string{"BURROW_ADDR"},
 		},
-		cli.StringFlag{
+		&cli.StringFlag{
 			Name:   "metrics-addr",
 			Usage:  "Address to run prometheus on",
 			EnvVars: []string{"METRICS_ADDR"},
 		},
-		cli.IntFlag{
+		&cli.IntFlag{
 			Name:   "interval",
 			Usage:  "The interval(seconds) specifies how often to scrape burrow.",
 			EnvVars: []string{"INTERVAL"},
 		},
-		cli.IntFlag{
+		&cli.IntFlag{
 			Name:   "api-version",
 			Usage:  "Burrow API version to leverage",
 			Value:  2,
 			EnvVars: []string{"API_VERSION"},
 		},
-		cli.BoolFlag{
+		&cli.BoolFlag{
 			Name:   "skip-partition-status",
 			Usage:  "Skip exporting the per-partition status",
 			EnvVars: []string{"SKIP_PARTITION_STATUS"},
 		},
-		cli.BoolFlag{
+		&cli.BoolFlag{
 			Name:   "skip-group-status",
 			Usage:  "Skip exporting the per-group status",
 			EnvVars: []string{"SKIP_GROUP_STATUS"},
 		},
-		cli.BoolFlag{
+		&cli.BoolFlag{
 			Name:   "skip-partition-lag",
 			Usage:  "Skip exporting the partition lag",
 			EnvVars: []string{"SKIP_PARTITION_LAG"},
 		},
-		cli.BoolFlag{
+		&cli.BoolFlag{
 			Name:   "skip-partition-current-offset",
 			Usage:  "Skip exporting the current offset per partition",
 			EnvVars: []string{"SKIP_PARTITION_CURRENT_OFFSET"},
 		},
-		cli.BoolFlag{
+		&cli.BoolFlag{
 			Name:   "skip-partition-max-offset",
 			Usage:  "Skip exporting the partition max offset",
 			EnvVars: []string{"SKIP_PARTITION_MAX_OFFSET"},
 		},
-		cli.BoolFlag{
+		&cli.BoolFlag{
 			Name:   "skip-total-lag",
 			Usage:  "Skip exporting the total lag",
 			EnvVars: []string{"SKIP_TOTAL_LAG"},
 		},
-		cli.BoolFlag{
+		&cli.BoolFlag{
 			Name:   "skip-topic-partition-offset",
 			Usage:  "Skip exporting topic partition offset",
 			EnvVars: []string{"SKIP_TOPIC_PARTITION_OFFSET"},
